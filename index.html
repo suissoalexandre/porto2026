@@ -73,7 +73,7 @@
 
         <div class="content-grid">
             <div class="panel">
-                <h2>Curva de Desempenho (Pace vs. BPM)</h2>
+                <h2>Evolução por Quilómetro (Pace vs BPM vs Cadência)</h2>
                 <div class="chart-container"><canvas id="performanceChart"></canvas></div>
             </div>
             <div class="panel">
@@ -88,7 +88,7 @@
         </div>
         
         <div class="panel" style="margin-top: 20px;">
-            <h2>Raio-X dos Blocos (Com Fisiologia e Biomecânica Integradas)</h2>
+            <h2>Raio-X dos Blocos</h2>
             <div style="max-height: 400px; overflow-y: auto;">
                 <table>
                     <thead><tr><th>Volta</th><th>Distância</th><th>Ritmo (Pace)</th><th>BPM (Zona)</th><th>Cadência (spm)</th><th>Esforço</th></tr></thead>
@@ -216,17 +216,20 @@
         new Chart(ctxPerf, {
             type: 'line',
             data: {
-                labels: ["B1", "B2", "B3", "B4", "B5", "B6", "B7", "B8", "B9", "B10", "B11"],
+                labels: ["1k", "2k", "3k", "4k", "5k", "6k", "7k", "8k", "9k", "10k", "10.0k"],
                 datasets: [
-                    { label: 'BPM', data: [120, 126, 132, 136, 138, 139, 130, 133, 139, 141, 142], borderColor: '#ef4444', backgroundColor: 'rgba(239, 68, 68, 0.1)', fill: true, yAxisID: 'yBpm', tension: 0.3 },
-                    { label: 'Pace (Min/km)', data: [6.17, 5.75, 5.68, 5.7, 5.7, 5.72, 5.8, 5.68, 5.7, 5.7, 5.15], borderColor: '#3b82f6', borderDash: [5, 5], yAxisID: 'yPace', tension: 0.1 }
+                    { label: 'BPM', data: [120, 126, 132, 136, 138, 139, 130, 133, 139, 141, 142], borderColor: '#ef4444', backgroundColor: 'rgba(239, 68, 68, 0.1)', fill: true, yAxisID: 'yBpm', tension: 0.3, pointRadius: 3 },
+                    { label: 'Pace (Min/km)', data: [6.17, 5.75, 5.68, 5.7, 5.7, 5.72, 5.8, 5.68, 5.7, 5.7, 5.15], borderColor: '#3b82f6', borderDash: [5, 5], yAxisID: 'yPace', tension: 0.1, pointRadius: 3 },
+                    { label: 'Cadência (spm)', data: [172, 178, 178, 178, 178, 178, 176, 180, 180, 180, 178], borderColor: '#10b981', borderDash: [2, 2], yAxisID: 'yCad', tension: 0.2, pointRadius: 3 }
                 ]
             },
             options: {
                 responsive: true, maintainAspectRatio: false,
                 scales: {
-                    yBpm: { type: 'linear', position: 'left' },
-                    yPace: { type: 'linear', position: 'right', reverse: true, grid: { drawOnChartArea: false } }
+                    x: { title: { display: true, text: 'Distância (KM)', color: '#64748b' } },
+                    yBpm: { type: 'linear', position: 'left', title: { display: true, text: 'BPM' } },
+                    yPace: { type: 'linear', position: 'right', reverse: true, title: { display: true, text: 'Pace (Min/km)' }, grid: { drawOnChartArea: false } },
+                    yCad: { type: 'linear', position: 'right', title: { display: true, text: 'Cadência (spm)' }, grid: { drawOnChartArea: false } }
                 }
             }
         });
