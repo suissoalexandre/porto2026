@@ -28,6 +28,9 @@
         .panel h2 { margin-top: 0; font-size: 16px; color: var(--dark); margin-bottom: 15px; }
         .chart-container { position: relative; height: 280px; width: 100%; }
         .analysis-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; font-size: 14px; line-height: 1.7; color: #334155; }
+        .notes-box { margin-top: 20px; padding: 15px; background-color: #f8fafc; border-left: 4px solid var(--blue); border-radius: 8px; }
+        .notes-box h4 { margin: 0 0 5px 0; color: var(--dark); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .notes-box p { margin: 0; font-size: 14px; color: #475569; font-style: italic; line-height: 1.5; }
         table { width: 100%; border-collapse: collapse; text-align: left; font-size: 13px; }
         th { background-color: #f1f5f9; color: #475569; padding: 10px; text-transform: uppercase; font-size: 11px; }
     </style>
@@ -75,13 +78,19 @@
             <div class="panel">
                 <h2>Evolução por Quilómetro (Pace vs BPM vs Cadência)</h2>
                 <div class="chart-container"><canvas id="performanceChart"></canvas></div>
+                
+                <div class="notes-box">
+                    <h4>📝 Notas do Atleta</h4>
+                    <p>"Treino tranquilo, sem nenhuma alteração. Me senti melhor que os anteriores parecidos com esse."</p>
+                </div>
+                
             </div>
             <div class="panel">
                 <h2>🧠 DIRETRIZ TÉCNICA E ANÁLISE</h2>
                 <div class="analysis-box">
                     <p><strong>Recuperação Comprometida:</strong> A Frequência Cardíaca em Repouso (FCR) atual de 50 bpm está ligeiramente acima da média. O valor da VFC na última noite foi de 34, abaixo da linha de base ("balanced low" de 40). O score de sono (90) e a alta contagem de despertares indicam uma recuperação ineficaz. A Body Battery desceu para 44 após o exercício intenso, reforçando a necessidade urgente de otimização.</p>
                     <p><strong>Sobrecarga (Intervals.icu):</strong> O seu Condicionamento (CTL) atingiu 22.21. No entanto, a Fadiga Aguda (ATL) de 25.84 superou o CTL, resultando num TSB (Forma) negativo de -3.63. O corpo está a acumular mais fadiga do que o ideal, existindo um risco acrescido de overtraining se a recuperação não for priorizada.</p>
-                    <p><strong>Correção Biomecânica:</strong> A cadência (175 spm) e a oscilação (6.0 cm) são excelentes. Contudo, o Tempo Contato com o Solo (GCT) de 271.1 ms exige atenção. Um GCT prolongado indica um ponto de contato no calcanhar ou falta de propulsão rápida.</p>
+                    <p><strong>Correção Biomecânica:</strong> A cadência (175 spm) e a oscilação (6.0 cm) são excelentes. Contudo, o Tempo de Contato com o Solo (GCT) de 271.1 ms exige atenção. Um GCT prolongado indica um ponto de contato no calcanhar ou falta de propulsão rápida.</p>
                     <p style="margin-bottom: 0;"><strong>Ação Imediata:</strong> Priorize uma intensidade mais baixa. Concentre-se em reduzir o Tempo de Contato com o Solo, imaginando um "piso quente" sob os pés. Mantenha a cadência elevada e o tronco inclinado a partir dos tornozelos. A recuperação é crucial a 146 dias da maratona.</p>
                 </div>
             </div>
