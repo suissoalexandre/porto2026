@@ -15,6 +15,7 @@
         .card h3 { margin: 0; font-size: 11px; color: #64748b; text-transform: uppercase; }
         .card p { margin: 5px 0 0 0; font-size: 22px; font-weight: 700; }
         .panel { background: var(--card); padding: 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        .analysis-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; font-size: 14px; line-height: 1.7; color: #334155; }
         table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13px; }
         th { background: #f1f5f9; padding: 10px; text-align: left; color: #475569; }
         td { padding: 10px; border-bottom: 1px solid #e2e8f0; }
@@ -29,7 +30,7 @@
 
         <h2 style="font-size:14px; color:#475569;">💤 SINAIS VITAIS (Garmin)</h2>
         <div class="grid">
-            <div class="card"><h3>HRV Noturno Médio</h3><p>-- ms</p></div>
+            <div class="card"><h3>VFC Média Noturna</h3><p>-- ms</p></div>
             <div class="card"><h3>BPM em Repouso</h3><p>50 bpm</p></div>
             <div class="card"><h3>Score de Sono</h3><p>84</p></div>
             <div class="card"><h3>Duração do Sono</h3><p>8h 51m</p></div>
@@ -45,12 +46,21 @@
         </div>
 
         <div class="panel">
-            <h3 style="margin-top:0;">Gráfico de Execução por KM</h3>
+            <h2 style="margin-top:0; font-size:16px;">📊 REVISÃO TÉCNICA DO DIA</h2>
+            <div class="analysis-box">
+                
+    <p><strong>Qualidade do Sono:</strong> O seu score de sono atingiu 84 pontos, com um tempo total de repouso registado em 8h 51m, fornecendo a recuperação necessária para a assimilação dos estímulos cardiovasculares.</p>
+    
+            </div>
+        </div>
+
+        <div class="panel">
+            <h3 style="margin-top:0; font-size:14px; color:#475569;">Gráfico de Execução Real por KM</h3>
             <div style="height:300px; position:relative;"><canvas id="perfChart"></canvas></div>
         </div>
 
         <div class="panel">
-            <h3 style="margin-top:0;">Raio-X das Voltas (Laps)</h3>
+            <h3 style="margin-top:0; font-size:14px; color:#475569;">Raio-X das Voltas (Laps)</h3>
             <table>
                 <thead><tr><th>Volta</th><th>Distância</th><th>Pace</th><th>BPM Médio</th><th>Cadência</th><th>Zona</th></tr></thead>
                 <tbody>
@@ -146,15 +156,15 @@
             data: {
                 labels: ["1k", "2k", "3k", "4k", "5k", "6k", "7k", "8k", "8.0k"],
                 datasets: [
-                    { label: 'BPM', data: [112, 121, 125, 127, 130, 131, 132, 134, 135], borderColor: '#ef4444', yAxisID: 'yBpm', tension: 0.2, fill: false },
+                    { label: 'BPM', data: [112, 121, 125, 127, 130, 131, 132, 134, 135], borderColor: '#ef4444', yAxisID: 'yLeft', tension: 0.2, fill: false },
                     { label: 'Pace (Min/km)', data: [6.03, 5.81, 5.94, 5.96, 5.82, 5.82, 5.83, 5.83, 5.55], borderColor: '#3b82f6', yAxisID: 'yPace', tension: 0.1, fill: false }
                 ]
             },
             options: {
                 responsive: true, maintainAspectRatio: false,
                 scales: {
-                    yBpm: { type: 'linear', position: 'left', min: 100, max: 200 },
-                    yPace: { type: 'linear', position: 'right', reverse: true }
+                    yLeft: { type: 'linear', position: 'left', min: 100, max: 200, title: { display: true, text: 'BPM' } },
+                    yPace: { type: 'linear', position: 'right', reverse: true, title: { display: true, text: 'Pace' } }
                 }
             }
         });
