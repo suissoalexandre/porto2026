@@ -15,7 +15,11 @@
         .card h3 { margin: 0; font-size: 11px; color: #64748b; text-transform: uppercase; }
         .card p { margin: 5px 0 0 0; font-size: 22px; font-weight: 700; }
         .panel { background: var(--card); padding: 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 20px; }
-        .analysis-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; font-size: 14px; line-height: 1.7; color: #334155; }
+        .notes-box { background-color: #f8fafc; border-left: 4px solid var(--blue); padding: 15px; border-radius: 8px; margin-bottom: 15px; font-style: italic; color: #475569; }
+        .coach-box { background-color: #fffdf5; border-left: 5px solid #f59e0b; border-radius: 8px; padding: 18px; border-top: 1px solid #fef3c7; border-right: 1px solid #fef3c7; border-bottom: 1px solid #fef3c7; }
+        .coach-box h4 { margin: 0 0 10px 0; color: #d97706; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .coach-box p { margin: 0 0 10px 0; font-size: 14px; color: #334155; line-height: 1.6; }
+        .coach-box p:last-child { margin-bottom: 0; }
         table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13px; }
         th { background: #f1f5f9; padding: 10px; text-align: left; color: #475569; }
         td { padding: 10px; border-bottom: 1px solid #e2e8f0; }
@@ -25,10 +29,10 @@
     <div class="dashboard">
         <div class="header">
             <h1 style="margin:0; font-size:22px;">🦅 PAINEL DE PERFORMANCE REAL</h1>
-            <div style="font-size:12px; color:#94a3b8; margin-top:4px;">Métricas Reais Extraídas Diretamente via API</div>
+            <div style="font-size:12px; color:#94a3b8; margin-top:4px;">Maratona do Porto 2026 • Visão Dinâmica</div>
         </div>
 
-        <h2 style="font-size:14px; color:#475569;">💤 SINAIS VITAIS (Garmin)</h2>
+        <h2 style="font-size:14px; color:#475569;">💤 SINAIS VITAIS (Garmin Fenix 8)</h2>
         <div class="grid">
             <div class="card"><h3>VFC Média Noturna</h3><p>-- ms</p></div>
             <div class="card"><h3>BPM em Repouso</h3><p>50 bpm</p></div>
@@ -46,9 +50,14 @@
         </div>
 
         <div class="panel">
-            <h2 style="margin-top:0; font-size:16px;">📊 REVISÃO TÉCNICA DO DIA</h2>
-            <div class="analysis-box">
-                <p>A avaliação do seu sono computou um score de <strong>84 pontos</strong> durante o período total de repouso de 8h 51m.</p>
+            <div class="notes-box">
+                <span style="font-weight:600; color:#1e293b; text-transform:uppercase; font-size:11px; display:block; margin-bottom:5px;">📝 Notas do Atleta</span>
+                "treino leve e sem alterações, Stryd marcou errado um trecho do treino, não entendi o pq. Rodei todo treino a 5’50”"
+            </div>
+            
+            <div class="coach-box">
+                <h4>🧠 AVALIAÇÃO ANALÍTICA (COACH IA)</h4>
+                <p><strong>🔋 Sinais Vitais (Garmin):</strong> A sua VFC da última noite registou <strong>-- ms</strong>. A Frequência Cardíaca em Repouso cravou nos <strong>50 bpm</strong> e o seu Score de Sono fechou em <strong>84</strong>. A sua recuperação autonómica foi excelente antes de aplicar este estímulo de treino.</p><p><strong>🫀 Resposta Fisiológica:</strong> Para entregar o Pace médio de 5:52 /km, o seu coração exigiu <strong>127 bpm</strong> (Z1 (Regenerativo)). Pace cirúrgico! Execução perfeita dentro da faixa prescrita (5:33 a 5:53). O custo metabólico está excelente.</p>
             </div>
         </div>
 
@@ -154,15 +163,18 @@
             data: {
                 labels: ["1k", "2k", "3k", "4k", "5k", "6k", "7k", "8k", "8.0k"],
                 datasets: [
-                    { label: 'BPM', data: [112, 121, 125, 127, 130, 131, 132, 134, 135], borderColor: '#ef4444', yAxisID: 'yLeft', tension: 0.2, fill: false },
-                    { label: 'Pace (Min/km)', data: [6.03, 5.81, 5.94, 5.96, 5.82, 5.82, 5.83, 5.83, 5.55], borderColor: '#3b82f6', yAxisID: 'yPace', tension: 0.1, fill: false }
+                    { label: 'BPM', data: [112, 121, 125, 127, 130, 131, 132, 134, 135], borderColor: '#ef4444', backgroundColor: 'rgba(239, 68, 68, 0.1)', fill: true, yAxisID: 'yLeft', tension: 0.3, pointRadius: 3 },
+                    { label: 'Pace Real', data: [6.03, 5.81, 5.94, 5.96, 5.82, 5.82, 5.83, 5.83, 5.55], borderColor: '#3b82f6', yAxisID: 'yPace', tension: 0.1, pointRadius: 4, borderWidth: 3 },
+                    { label: 'Cadência', data: [174, 178, 178, 178, 178, 178, 178, 178, 178], borderColor: '#10b981', borderDash: [2, 2], yAxisID: 'yLeft', tension: 0.2, pointRadius: 3 },
+                    { label: 'Meta Min (Lento)', data: [5.89, 5.89, 5.89, 5.89, 5.89, 5.89, 5.89, 5.89, 5.89], borderColor: 'rgba(0,0,0,0)', backgroundColor: 'rgba(100, 116, 139, 0.08)', fill: '+1', yAxisID: 'yPace', pointRadius: 0, tension: 0 },
+                    { label: 'Meta Max (Rápido)', data: [5.56, 5.56, 5.56, 5.56, 5.56, 5.56, 5.56, 5.56, 5.56], borderColor: 'rgba(100, 116, 139, 0.15)', borderDash: [3, 3], backgroundColor: 'rgba(0,0,0,0)', fill: false, yAxisID: 'yPace', pointRadius: 0, tension: 0 }
                 ]
             },
             options: {
                 responsive: true, maintainAspectRatio: false,
                 scales: {
-                    yLeft: { type: 'linear', position: 'left', min: 100, max: 200, title: { display: true, text: 'BPM' } },
-                    yPace: { type: 'linear', position: 'right', reverse: true, title: { display: true, text: 'Pace' } }
+                    yLeft: { type: 'linear', position: 'left', min: 100, max: 200, title: { display: true, text: 'BPM & Cadência' } },
+                    yPace: { type: 'linear', position: 'right', reverse: true, min: 5.0, max: 7.5, title: { display: true, text: 'Pace (Min/km)' }, grid: { drawOnChartArea: false } }
                 }
             }
         });
