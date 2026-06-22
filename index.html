@@ -26,7 +26,7 @@
 <body>
     <div class="dashboard">
         <div class="header">
-            <div><h1>🦅 PAINEL COMPLETO DE ALTA PERFORMANCE</h1><div style="color:#94a3b8; margin-top:5px; font-size:13px;">Engenharia de Dados Real • Sem Simulações</div></div>
+            <div><h1>🦅 PAINEL INTEGRADO DE PERFORMANCE</h1><div style="color:#94a3b8; margin-top:5px; font-size:13px;">Engenharia de Dados Real • Sincronização Síncrona</div></div>
             <div style="background:var(--blue); padding:10px 15px; border-radius:8px; font-weight:bold;">PORTO 2026</div>
         </div>
 
@@ -51,7 +51,7 @@
             <div style="height:250px;"><canvas id="pmcChart"></canvas></div>
         </div>
 
-        <h2 style="font-size:16px;">⚙️ BIOMECÂNICA (Fenix 8 + Stryd)</h2>
+        <h2 style="font-size:16px;">⚙️ BIOMECÂNICA</h2>
         <div class="grid-5">
             <div class="card"><h3>Distância</h3><p>-- km</p></div>
             <div class="card"><h3>Pace Médio</h3><p>--</p></div>
@@ -72,14 +72,14 @@
 
                 <div class="coach-box">
                     <h4 style="margin:0 0 10px 0; color:#d97706;">🧠 AVALIAÇÃO ANALÍTICA (COACH IA)</h4>
-                    <p>Aguardando novos dados reais síncronos de atividade.</p>
+                    <p>O diagnóstico técnico de corrida será estruturado na próxima sincronização síncrona do arquivo FIT.</p>
                 </div>
             </div>
 
             <div class="panel">
                 <h3 style="margin-top:0;">⚠️ ALERTAS TÉCNICOS GERAIS</h3>
                 <div style="background:#fef2f2; border:1px solid #fee2e2; padding:15px; border-radius:8px; min-height:100px;">
-                    <p style='color:#10b981; font-weight:600;'>✅ Todos os sinais de engenharia de dados operam dentro dos parâmetros normais.</p>
+                    <p>Aguardando a liberação de acesso aos servidores Garmin/Intervals para estruturar as notificações técnicas.</p>
                 </div>
             </div>
         </div>
@@ -94,9 +94,8 @@
     </div>
 
     <script>
-        // Renderizacao segura do PMC
         const pmcLabels = [];
-        if (pmcLabels.length > 0) {
+        if (pmcLabels && pmcLabels.length > 0) {
             document.getElementById('pmcContainer').style.display = 'block';
             new Chart(document.getElementById('pmcChart').getContext('2d'), {
                 type: 'line',
@@ -111,9 +110,8 @@
             });
         }
 
-        // Renderizacao segura de Metricas por Lap
         const lapLabels = [];
-        if (lapLabels.length > 0) {
+        if (lapLabels && lapLabels.length > 0) {
             document.getElementById('lapsContainer').style.display = 'block';
             new Chart(document.getElementById('perfChart').getContext('2d'), {
                 type: 'line',
@@ -122,9 +120,7 @@
                     datasets: [
                         { label: 'BPM', data: [], borderColor: '#ef4444', yAxisID: 'yLeft', tension: 0.2, fill: false },
                         { label: 'Pace', data: [], borderColor: '#3b82f6', yAxisID: 'yPace', tension: 0.1, borderWidth: 3, fill: false },
-                        { label: 'Cadência', data: [], borderColor: '#10b981', borderDash: [2,2], yAxisID: 'yLeft', tension: 0.2, fill: false },
-                        { label: 'Meta Min', data: [], borderColor: 'transparent', backgroundColor: 'rgba(100,116,139,0.08)', fill: '+1', yAxisID: 'yPace', pointRadius: 0 },
-                        { label: 'Meta Max', data: [], borderColor: 'rgba(100,116,139,0.2)', borderDash: [3,3], fill: false, yAxisID: 'yPace', pointRadius: 0 }
+                        { label: 'Cadência', data: [], borderColor: '#10b981', borderDash: [2,2], yAxisID: 'yLeft', tension: 0.2, fill: false }
                     ]
                 },
                 options: {
