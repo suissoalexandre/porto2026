@@ -37,7 +37,7 @@
             <div class="card" style="border-top-color:#f59e0b;"><h3>BPM Repouso</h3><p>50 bpm</p></div>
             <div class="card" style="border-top-color:#ef4444;"><h3>Score de Sono</h3><p>84</p></div>
             <div class="card" style="border-top-color:#3b82f6;"><h3>Duração Sono</h3><p>8h 51m</p></div>
-            <div class="card" style="border-top-color:#ef4444;"><h3>Body Battery</h3><p>40</p></div>
+            <div class="card" style="border-top-color:#ef4444;"><h3>Body Battery</h3><p>44</p></div>
         </div>
 
         <h2 style="font-size:16px; margin-bottom:15px; margin-top:30px;">📊 CONDICIONAMENTO & FADIGA (Intervals.icu - 42 Dias)</h2>
@@ -58,7 +58,7 @@
             <div class="card"><h3>Tempo Contato (GCT)</h3><p>271.1 ms</p></div>
             <div class="card"><h3>Oscilação Vertical</h3><p>5.3 cm</p></div>
             <div class="card"><h3>Pace Médio</h3><p>5:52 /km</p></div>
-            <div class="card"><h3>Distância</h3><p>8.03 km</p></div>
+            <div class="card"><h3>Distância</h3><p>8.0 km</p></div>
         </div>
 
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:20px; margin-top:20px;">
@@ -68,7 +68,7 @@
                 
                 <div style="background:#f8fafc; border-left:4px solid var(--blue); padding:15px; border-radius:8px; margin-top:20px;">
                     <h4 style="margin:0 0 5px 0; font-size:12px; color:var(--dark); text-transform:uppercase;">📝 Notas do Atleta</h4>
-                    <p style="margin:0; font-size:14px; font-style:italic;">"treino leve e sem alterações, Stryd marcou errado um trecho do treino, não entendi o pq. Rodei todo treino a 5’50”"</p>
+                    <p style="margin:0; font-size:14px; font-style:italic;">"treino leve e sem alterações, Stryd marcou errado um trecho do treino, não entendi o pq. Rodei todo treino a 5'50""</p>
                 </div>
 
                 <div class="coach-box">
@@ -85,7 +85,7 @@
                 <h3 style="margin-top:0;">⚠️ ALERTAS TÉCNICOS GERAIS</h3>
                 <div style="background:#f8fafc; border:1px solid #e2e8f0; padding:20px; border-radius:8px; min-height:100px; font-size:14px; line-height:1.6;">
                     
-<p style='margin-bottom:15px;'><strong>Recuperação Comprometida:</strong> A Frequência Cardíaca em Repouso (FCR) atual de 50 bpm está ligeiramente acima da média. O valor da VFC na última noite foi de 34, abaixo da linha de base ("balanced low" de 40). O score de sono (84) e a alta contagem de despertares indicam uma recuperação ineficaz. A Body Battery desceu para 40 após o exercício intenso, reforçando a necessidade urgente de otimização.</p>
+<p style='margin-bottom:15px;'><strong>Recuperação Comprometida:</strong> A Frequência Cardíaca em Repouso (FCR) atual de 50 bpm está ligeiramente acima da média. O valor da VFC na última noite foi de 34, abaixo da linha de base ("balanced low" de 40). O score de sono (84) e a alta contagem de despertares indicam uma recuperação ineficaz. A Body Battery desceu para 44 após o exercício intenso, reforçando a necessidade urgente de otimização.</p>
 <p style='margin-bottom:15px;'><strong>Sobrecarga (Intervals.icu):</strong> O seu Condicionamento (CTL) atingiu 24.0. No entanto, a Fadiga Aguda (ATL) de 28.7 superou o CTL, resultando num TSB (Forma) negativo de -4.7. O corpo está a acumular mais fadiga do que o ideal, existindo um risco acrescido de overtraining se a recuperação não for priorizada.</p>
 <p><strong>Ação Imediata:</strong> Priorize a recuperação. A 146 dias da maratona, forçar o corpo nesta zona de TSB negativo sem noites de sono corretas é risco alto para lesões estruturais.</p>
 
@@ -167,11 +167,11 @@
         new Chart(document.getElementById('perfChart').getContext('2d'), {
             type: 'line',
             data: {
-                labels: ["1k", "2k", "3k", "4k", "5k", "6k", "7k", "8k", "8k"],
+                labels: ["1k", "2k", "3k", "4k", "5k", "6k", "7k", "8k", "8.0k"],
                 datasets: [
-                    { label: 'BPM', data: [112, 121, 125, 127, 130, 131, 132, 134, 135], borderColor: '#ef4444', backgroundColor: 'rgba(239, 68, 68, 0.1)', fill: true, yAxisID: 'yLeft', tension: 0.3, pointRadius: 3 },
-                    { label: 'Pace Real', data: [6.03, 5.81, 5.94, 5.96, 5.82, 5.82, 5.83, 5.83, 5.55], borderColor: '#3b82f6', yAxisID: 'yPace', tension: 0.1, pointRadius: 4, borderWidth: 3, fill: false },
-                    { label: 'Cadência', data: [87, 89, 89, 89, 89, 89, 89, 89, 89], borderColor: '#10b981', borderDash: [2,2], yAxisID: 'yLeft', tension: 0.2, pointRadius: 3, fill: false }
+                    { label: 'BPM', data: [112, 121, 125, 127, 130, 131, 132, 135, 135], borderColor: '#ef4444', backgroundColor: 'rgba(239, 68, 68, 0.1)', fill: true, yAxisID: 'yLeft', tension: 0.3, pointRadius: 3 },
+                    { label: 'Pace Real', data: [6.02, 5.85, 5.95, 5.97, 5.85, 5.85, 5.87, 5.87, 5.7], borderColor: '#3b82f6', yAxisID: 'yPace', tension: 0.1, pointRadius: 4, borderWidth: 3, fill: false },
+                    { label: 'Cadência', data: [174, 178, 178, 178, 178, 178, 178, 178, 178], borderColor: '#10b981', borderDash: [2,2], yAxisID: 'yLeft', tension: 0.2, pointRadius: 3, fill: false }
                 ]
             },
             options: {
