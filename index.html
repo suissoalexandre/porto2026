@@ -25,13 +25,13 @@
 <body>
     <div class="dashboard">
         <div class="header">
-            <div><h1>🦅 PAINEL DE PERFORMANCE INTEGRADO</h1><div style="color:#94a3b8; margin-top:5px; font-size:13px;">Visão Fisiológica e Biomecânica de Alto Rendimento</div></div>
+            <div><h1>🦅 PAINEL DE PERFORMANCE INTEGRADO</h1><div style="color:#94a3b8; margin-top:5px; font-size:13px;">Visão Fisiológica e Biomecânica de Alto Rendimento (Dados Estritos)</div></div>
             <div style="background:var(--blue); padding:10px 15px; border-radius:8px; font-weight:bold;">MARATONA DO PORTO 2026</div>
         </div>
 
         <h2 style="font-size:16px; margin-bottom:15px;">🧬 SINAIS VITAIS & RECUPERAÇÃO (Garmin)</h2>
         <div class="grid-5">
-            <div class="card" style="border-top-color:#ef4444;"><h3>HRV (VFC)</h3><p>34 ms</p></div>
+            <div class="card" style="border-top-color:#ef4444;"><h3>HRV (VFC)</h3><p>-- ms</p></div>
             <div class="card" style="border-top-color:#f59e0b;"><h3>BPM Repouso</h3><p>48 bpm</p></div>
             <div class="card" style="border-top-color:#ef4444;"><h3>Score de Sono</h3><p>86</p></div>
             <div class="card" style="border-top-color:#3b82f6;"><h3>Duração Sono</h3><p>6h 49m</p></div>
@@ -53,15 +53,14 @@
         <h2 style="font-size:16px; margin-bottom:15px; margin-top:30px;">⚙️ EFICIÊNCIA BIOMECÂNICA (Fenix 8 + Stryd)</h2>
         <div class="grid-5">
             <div class="card"><h3>Cadência</h3><p>178 spm</p></div>
-            <div class="card"><h3>Contato (GCT)</h3><p>271.1 ms</p></div>
+            <div class="card"><h3>Contato (GCT)</h3><p>-- ms</p></div>
             <div class="card"><h3>Proporção Vert.</h3><p>5.8%</p></div>
             <div class="card"><h3>Pace Médio</h3><p>5:52 /km</p></div>
-            <div class="card"><h3>Potência</h3><p>245 W</p></div>
+            <div class="card"><h3>Potência</h3><p>-- W</p></div>
         </div>
 
-        <!-- 1. GRÁFICO PRIMEIRO -->
         <div class="panel">
-            <h3 style="margin-top:0;">Evolução por Quilómetro (Pace vs BPM vs Cadência)</h3>
+            <h3 style="margin-top:0;">Evolução por Quilómetro</h3>
             <div style="height:320px;"><canvas id="perfChart"></canvas></div>
             
             <div style="background:#f8fafc; border-left:4px solid var(--blue); padding:15px; border-radius:8px; margin-top:20px;">
@@ -70,41 +69,35 @@
             </div>
         </div>
 
-        <!-- 2. AVALIAÇÕES DE SAÚDE E VDOT ABAIXO DO GRÁFICO -->
         <div class="panel">
             <h3 style="margin-top:0;">⚠️ ALERTAS TÉCNICOS GERAIS E AVALIAÇÃO</h3>
             
-<div style="background:#f8fafc; border:1px solid #e2e8f0; padding:20px; border-radius:8px; font-size:14px; line-height:1.6;">
-    <h3 style="margin-top:0; color:#1e293b; font-size:15px; border-bottom:1px solid #cbd5e1; padding-bottom:8px;">🩺 Recuperação e Sistema Autonómico</h3>
-    <p style='margin-bottom:12px;'><strong>Sinais Cardíacos em Repouso:</strong> A Frequência Cardíaca em Repouso (FCR) fixou-se em <strong>48 bpm</strong>. Em paralelo, a Variabilidade da Frequência Cardíaca (VFC) registou <strong>34 ms</strong> (abaixo do limiar ótimo de 40ms). O sistema parassimpático não está a conseguir compensar totalmente a fadiga neural induzida pelos blocos de treino anteriores.</p>
-    <p style='margin-bottom:12px;'><strong>Recomposição Celular (Sono & Bateria):</strong> Com uma pontuação de sono de <strong>86/100</strong> e uma duração de <strong>6h 49m</strong>, houve quebra nos ciclos de reparação profunda (REM/NREM). O dreno diário resultou numa Body Battery de apenas <strong>45%</strong> pós-treino, indicando reserva energética perigosamente baixa.</p>
-    <p style='margin-bottom:0;'><strong>Carga Estrutural (CTL vs ATL):</strong> A sua aptidão crónica (CTL) suporta os <strong>23.4</strong>, mas a fadiga aguda (ATL) de <strong>24.9</strong> atirou a sua Forma (TSB) para <strong>-1.5</strong>. É imperativo priorizar a hidratação e o sono ininterrupto nas próximas 24h para forçar a curva de supercompensação.</p>
-</div>
-
-            
-<div style="background-color:#fff8f1; border:1px solid #fed7aa; border-left:6px solid #ea580c; border-radius:8px; padding:20px; margin-top:20px;">
-    <h3 style="margin:0 0 15px 0; color:#9a3412; font-size:14px; text-transform:uppercase; letter-spacing:0.5px;">
-        🧢 AVALIAÇÃO DE ALTO RENDIMENTO: MATRIZ VDOT
-    </h3>
+    <div style="background:#f8fafc; border:1px solid #e2e8f0; padding:20px; border-radius:8px; font-size:14px; line-height:1.6;">
+        <h3 style="margin-top:0; color:#1e293b; font-size:15px; border-bottom:1px solid #cbd5e1; padding-bottom:8px;">🩺 Recuperação e Sistema Autonómico (Dados Reais)</h3>
+        <p style='margin-bottom:12px;'><strong>Sinais Cardíacos em Repouso:</strong> A FCR foi de <strong>48 bpm</strong>. A VFC da noite registou <strong>-- ms</strong>.</p>
+        <p style='margin-bottom:12px;'><strong>Recomposição Celular:</strong> Score de sono de <strong>86/100</strong> (6h 49m). A Body Battery está em <strong>45%</strong>.</p>
+        <p style='margin-bottom:0;'><strong>Carga Estrutural (Intervals):</strong> Condicionamento (CTL): <strong>23.4</strong> | Fadiga (ATL): <strong>24.9</strong> | Forma (TSB): <strong>-1.5</strong>.</p>
+    </div>
     
-    <p style='font-size:14px; color:#334155; line-height:1.6; margin-bottom:12px;'><strong>1. Custo Metabólico e Potência (Realizado vs. Prescrito):</strong><br>
-    O plano exigia sustentação na janela de <strong>5:53 a 5:33 /km</strong>. A entrega foi de <strong>5:52 /km</strong> com uma demanda cardíaca média de <strong>127 bpm</strong>, concentrando a grande maioria do esforço dentro da Zona 2. Operar neste ritmo gerando uma Potência de <strong>245 Watts</strong> valida a sua economia de corrida aeróbica (E-Pace). O Efeito de Treino Aeróbico cravou <strong>3.0999999046325684</strong>, cumprindo a missão mitocondrial do dia sem invadir a glicólise anaeróbica (TE Anaeróbico: 0.0).</p>
+            
+    <div style="background-color:#fff8f1; border:1px solid #fed7aa; border-left:6px solid #ea580c; border-radius:8px; padding:20px; margin-top:20px;">
+        <h3 style="margin:0 0 15px 0; color:#9a3412; font-size:14px; text-transform:uppercase; letter-spacing:0.5px;">
+            🧢 AVALIAÇÃO DE ALTO RENDIMENTO: MATRIZ VDOT (Dados Reais)
+        </h3>
+        <p style='font-size:14px; color:#334155; line-height:1.6; margin-bottom:12px;'><strong>1. Custo Metabólico e Potência:</strong><br>
+        O plano exigia sustentação em <strong>5:53 a 5:33 /km</strong>. A execução média foi de <strong>5:52 /km</strong> sob <strong>127 bpm</strong>. Efeito de Treino Aeróbico cravou <strong>3.0999999046325684</strong>, com TE Anaeróbico de <strong>--</strong>. Potência alcançada: <strong>-- W</strong>.</p>
 
-    <p style='font-size:14px; color:#334155; line-height:1.6; margin-bottom:12px;'><strong>2. Biomecânica Dinâmica (Dinâmica de Passada):</strong><br>
-    O Turnover estabilizou nuns excelentes <strong>178 spm</strong> com um Comprimento de Passada de <strong>0.98 metros</strong>. O Tempo de Contato com o Solo (GCT) foi de <strong>271.1 ms</strong>. A métrica mais forte aqui é a sua Oscilação Vertical de <strong>5.3 cm</strong> cruzada com o avanço, resultando numa Proporção Vertical (Vertical Ratio) de <strong>5.8%</strong>. Valores abaixo de 8% demonstram que a sua força de propulsão está a ser direcionada eficientemente para a frente, minimizando o desperdício vertical (salto) e poupando a musculatura dos quadris.</p>
-
-    <p style='font-size:14px; color:#334155; line-height:1.6; margin-bottom:0;'><strong>3. Veredito Estrutural:</strong><br>
-    A execução foi disciplinada, respeitando a intenção do bloco de base. No entanto, o motor VDOT exige que não se separe a mecânica da recuperação. Com as métricas autonómicas em queda (VFC=34), o ganho biomecânico deste E-Pace só será cristalizado nas fibras musculares se o corpo entrar agora numa fase agressiva de descanso sistémico.</p>
-</div>
-
+        <p style='font-size:14px; color:#334155; line-height:1.6; margin-bottom:12px;'><strong>2. Biomecânica Dinâmica:</strong><br>
+        Turnover fixou-se em <strong>178 spm</strong>, com passada de <strong>-- metros</strong>. O Tempo de Contato (GCT) registou <strong>-- ms</strong>. A Proporção Vertical calculada foi de <strong>5.8%</strong>.</p>
+    </div>
+    
         </div>
 
-        <!-- 3. TABELA DE LAPS COMPLETA -->
         <div class="panel" id="lapsContainer">
             <h3 style="margin-top:0;">Raio-X das Voltas (8.03 km)</h3>
             <table>
-                <thead><tr><th>Volta</th><th>Distância</th><th>Ritmo (Pace)</th><th>BPM</th><th>Cadência (spm)</th><th>Esforço</th></tr></thead>
-                <tbody><tr><td style='padding:10px;'>01</td><td style='padding:10px; color:#3b82f6;'>1.00km</td><td style='padding:10px; font-weight:600;'>6:01</td><td style='padding:10px;'>112 (Z1)</td><td style='padding:10px;'>174</td><td style='padding:10px;'><span style='background-color:#2ecc71; color:white; padding:4px 10px; border-radius:20px; font-size:11px;'>Aquece</span></td></tr><tr><td style='padding:10px;'>02</td><td style='padding:10px; color:#3b82f6;'>1.00km</td><td style='padding:10px; font-weight:600;'>5:51</td><td style='padding:10px;'>121 (Z1)</td><td style='padding:10px;'>178</td><td style='padding:10px;'><span style='background-color:#3b82f6; color:white; padding:4px 10px; border-radius:20px; font-size:11px;'>Alvo</span></td></tr><tr><td style='padding:10px;'>03</td><td style='padding:10px; color:#3b82f6;'>1.00km</td><td style='padding:10px; font-weight:600;'>5:57</td><td style='padding:10px;'>125 (Z2)</td><td style='padding:10px;'>178</td><td style='padding:10px;'><span style='background-color:#3b82f6; color:white; padding:4px 10px; border-radius:20px; font-size:11px;'>Alvo</span></td></tr><tr><td style='padding:10px;'>04</td><td style='padding:10px; color:#3b82f6;'>1.00km</td><td style='padding:10px; font-weight:600;'>5:58</td><td style='padding:10px;'>127 (Z2)</td><td style='padding:10px;'>178</td><td style='padding:10px;'><span style='background-color:#3b82f6; color:white; padding:4px 10px; border-radius:20px; font-size:11px;'>Alvo</span></td></tr><tr><td style='padding:10px;'>05</td><td style='padding:10px; color:#3b82f6;'>1.00km</td><td style='padding:10px; font-weight:600;'>5:51</td><td style='padding:10px;'>130 (Z2)</td><td style='padding:10px;'>178</td><td style='padding:10px;'><span style='background-color:#3b82f6; color:white; padding:4px 10px; border-radius:20px; font-size:11px;'>Alvo</span></td></tr><tr><td style='padding:10px;'>06</td><td style='padding:10px; color:#3b82f6;'>1.00km</td><td style='padding:10px; font-weight:600;'>5:51</td><td style='padding:10px;'>131 (Z2)</td><td style='padding:10px;'>178</td><td style='padding:10px;'><span style='background-color:#3b82f6; color:white; padding:4px 10px; border-radius:20px; font-size:11px;'>Alvo</span></td></tr><tr><td style='padding:10px;'>07</td><td style='padding:10px; color:#3b82f6;'>1.00km</td><td style='padding:10px; font-weight:600;'>5:52</td><td style='padding:10px;'>132 (Z2)</td><td style='padding:10px;'>178</td><td style='padding:10px;'><span style='background-color:#3b82f6; color:white; padding:4px 10px; border-radius:20px; font-size:11px;'>Alvo</span></td></tr><tr><td style='padding:10px;'>08</td><td style='padding:10px; color:#3b82f6;'>1.00km</td><td style='padding:10px; font-weight:600;'>5:52</td><td style='padding:10px;'>135 (Z2)</td><td style='padding:10px;'>178</td><td style='padding:10px;'><span style='background-color:#3b82f6; color:white; padding:4px 10px; border-radius:20px; font-size:11px;'>Alvo</span></td></tr></tbody>
+                <thead><tr><th>Volta</th><th>Distância</th><th>Ritmo (Pace)</th><th>BPM</th><th>Cadência (spm)</th><th>Status</th></tr></thead>
+                <tbody><tr><td style='padding:10px;'>01</td><td style='padding:10px; color:#3b82f6;'>1.00km</td><td style='padding:10px; font-weight:600;'>6:01</td><td style='padding:10px;'>112 (Z1)</td><td style='padding:10px;'>87</td><td style='padding:10px;'><span style='background-color:#3b82f6; color:white; padding:4px 10px; border-radius:20px; font-size:11px;'>Concluído</span></td></tr><tr><td style='padding:10px;'>02</td><td style='padding:10px; color:#3b82f6;'>1.00km</td><td style='padding:10px; font-weight:600;'>5:48</td><td style='padding:10px;'>121 (Z1)</td><td style='padding:10px;'>89</td><td style='padding:10px;'><span style='background-color:#3b82f6; color:white; padding:4px 10px; border-radius:20px; font-size:11px;'>Concluído</span></td></tr><tr><td style='padding:10px;'>03</td><td style='padding:10px; color:#3b82f6;'>1.00km</td><td style='padding:10px; font-weight:600;'>5:56</td><td style='padding:10px;'>125 (Z2)</td><td style='padding:10px;'>89</td><td style='padding:10px;'><span style='background-color:#3b82f6; color:white; padding:4px 10px; border-radius:20px; font-size:11px;'>Concluído</span></td></tr><tr><td style='padding:10px;'>04</td><td style='padding:10px; color:#3b82f6;'>1.00km</td><td style='padding:10px; font-weight:600;'>5:57</td><td style='padding:10px;'>127 (Z2)</td><td style='padding:10px;'>89</td><td style='padding:10px;'><span style='background-color:#3b82f6; color:white; padding:4px 10px; border-radius:20px; font-size:11px;'>Concluído</span></td></tr><tr><td style='padding:10px;'>05</td><td style='padding:10px; color:#3b82f6;'>1.00km</td><td style='padding:10px; font-weight:600;'>5:49</td><td style='padding:10px;'>130 (Z2)</td><td style='padding:10px;'>89</td><td style='padding:10px;'><span style='background-color:#3b82f6; color:white; padding:4px 10px; border-radius:20px; font-size:11px;'>Concluído</span></td></tr><tr><td style='padding:10px;'>06</td><td style='padding:10px; color:#3b82f6;'>1.00km</td><td style='padding:10px; font-weight:600;'>5:49</td><td style='padding:10px;'>131 (Z2)</td><td style='padding:10px;'>89</td><td style='padding:10px;'><span style='background-color:#3b82f6; color:white; padding:4px 10px; border-radius:20px; font-size:11px;'>Concluído</span></td></tr><tr><td style='padding:10px;'>07</td><td style='padding:10px; color:#3b82f6;'>1.00km</td><td style='padding:10px; font-weight:600;'>5:49</td><td style='padding:10px;'>132 (Z2)</td><td style='padding:10px;'>89</td><td style='padding:10px;'><span style='background-color:#3b82f6; color:white; padding:4px 10px; border-radius:20px; font-size:11px;'>Concluído</span></td></tr><tr><td style='padding:10px;'>08</td><td style='padding:10px; color:#3b82f6;'>1.00km</td><td style='padding:10px; font-weight:600;'>5:50</td><td style='padding:10px;'>134 (Z2)</td><td style='padding:10px;'>89</td><td style='padding:10px;'><span style='background-color:#3b82f6; color:white; padding:4px 10px; border-radius:20px; font-size:11px;'>Concluído</span></td></tr><tr><td style='padding:10px;'>09</td><td style='padding:10px; color:#3b82f6;'>0.03km</td><td style='padding:10px; font-weight:600;'>5:32</td><td style='padding:10px;'>135 (Z3)</td><td style='padding:10px;'>89</td><td style='padding:10px;'><span style='background-color:#3b82f6; color:white; padding:4px 10px; border-radius:20px; font-size:11px;'>Concluído</span></td></tr></tbody>
             </table>
         </div>
     </div>
@@ -126,26 +119,27 @@
             });
         }
 
-        new Chart(document.getElementById('perfChart').getContext('2d'), {
-            type: 'line',
-            data: {
-                labels: ["1k", "2k", "3k", "4k", "5k", "6k", "7k", "8k", "8k"],
-                datasets: [
-                    { label: 'BPM', data: [112, 121, 125, 127, 130, 131, 132, 134, 135], borderColor: '#ef4444', backgroundColor: 'rgba(239, 68, 68, 0.1)', fill: true, yAxisID: 'yLeft', tension: 0.3, pointRadius: 3 },
-                    { label: 'Pace Real', data: [6.03, 5.81, 5.94, 5.96, 5.82, 5.82, 5.83, 5.83, 5.55], borderColor: '#3b82f6', yAxisID: 'yPace', tension: 0.1, pointRadius: 4, borderWidth: 3, fill: false },
-                    { label: 'Cadência', data: [87, 89, 89, 89, 89, 89, 89, 89, 89], borderColor: '#10b981', borderDash: [2,2], yAxisID: 'yLeft', tension: 0.2, pointRadius: 3, fill: false },
-                    { label: 'Meta Min', data: [], borderColor: 'transparent', backgroundColor: 'rgba(100,116,139,0.08)', fill: '+1', yAxisID: 'yPace', pointRadius: 0 },
-                    { label: 'Meta Max', data: [], borderColor: 'rgba(100,116,139,0.2)', borderDash: [3,3], fill: false, yAxisID: 'yPace', pointRadius: 0 }
-                ]
-            },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                scales: {
-                    yLeft: { type: 'linear', position: 'left', min: 100, max: 200 },
-                    yPace: { type: 'linear', position: 'right', reverse: true }
+        const lapLabels = ["1k", "2k", "3k", "4k", "5k", "6k", "7k", "8k", "8k"];
+        if (lapLabels && lapLabels.length > 0) {
+            new Chart(document.getElementById('perfChart').getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: lapLabels,
+                    datasets: [
+                        { label: 'BPM', data: [112, 121, 125, 127, 130, 131, 132, 134, 135], borderColor: '#ef4444', backgroundColor: 'rgba(239, 68, 68, 0.1)', fill: true, yAxisID: 'yLeft', tension: 0.3, pointRadius: 3 },
+                        { label: 'Pace Real', data: [6.03, 5.81, 5.94, 5.96, 5.82, 5.82, 5.83, 5.83, 5.55], borderColor: '#3b82f6', yAxisID: 'yPace', tension: 0.1, pointRadius: 4, borderWidth: 3, fill: false },
+                        { label: 'Cadência', data: [87, 89, 89, 89, 89, 89, 89, 89, 89], borderColor: '#10b981', borderDash: [2,2], yAxisID: 'yLeft', tension: 0.2, pointRadius: 3, fill: false }
+                    ]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    scales: {
+                        yLeft: { type: 'linear', position: 'left', min: 100, max: 200 },
+                        yPace: { type: 'linear', position: 'right', reverse: true }
+                    }
                 }
-            }
-        });
+            });
+        }
     </script>
 </body>
 </html>
